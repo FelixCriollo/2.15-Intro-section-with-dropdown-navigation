@@ -2,38 +2,151 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Intro section with dropdown navigation</title>
   
-  <title>Frontend Mentor | Intro section with dropdown navigation</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="src/css/styles.css">
+  <!-- <style>
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  </style> -->
 </head>
 <body>
+  <header class="header">
+    <img src="public/images/logo.svg" alt="snap" class="logo">
 
-  Features
-  Company
-  Careers
-  About
+    <span class="nav--nowrapp"></span>
+    <nav class="nav nav--hidden">
+      <button type="button" class="nav__close">
+        <img src="public/images/icon-close-menu.svg" alt="" aria-hidden="true">
+      </button>
+
+      <ul class="nav__list">
+        <li class="nav__item">
+          <p class="nav__title">Features
+            <button class="nav__title-btn" aria-label="drop list"></button> 
+          </p>
+          
+          <ul class="nav__sublist nav__sublist--hidden">
+            <li>
+              <a href="#" class="nav__link">
+                <img src="public/images/icon-todo.svg" alt="todo list">
+                Todo List
+              </a>
+            </li>
+            <li>
+              <a href="#" class="nav__link">
+                <img src="public/images/icon-calendar.svg" alt="calendar">
+                Calendar
+              </a>
+            </li>
+            <li>
+              <a href="#" class="nav__link">
+                <img src="public/images/icon-reminders.svg" alt="reminder">
+                Reminders
+              </a>
+            </li>
+            <li>
+              <a href="#" class="nav__link">
+                <img src="public/images/icon-planning.svg" alt="Planning">
+                Planning
+              </a>
+            </li>
+          </ul>
+        </li>
+        
+        <li class="nav__item">
+          <p class="nav__title">Company 
+            <button class="nav__title-btn" aria-label="drop list"></button>
+          </p>
+
+          <ul class="nav__sublist nav__sublist--hidden">
+            <li>
+              <a href="#" class="nav__link">History</a>
+            </li>
+            <li>
+              <a href="#" class="nav__link">Our Team</a>
+            </li>
+            <li>
+              <a href="#" class="nav__link">Blog</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="nav__item">
+          <!-- <p class="nav__title">Careers</p> -->
+          
+          <a href="#" class="nav__title">Careers</a>
+        </li>
+
+        <li class="nav__item">
+          <!-- <p class="nav__title">About</p> -->
+          <a href="#" class="nav__title">About</a>
+        </li>
+      </ul>
+
+      <ul class="nav__list">
+        <li class="nav__item">
+          <a href="#" class="nav__link"></a>
+        </li>
+
+        <li class="nav__item">
+          <a href="#" class="nav__link"></a>
+        </li>
+      </ul>
+    </nav>
+
+    <button type="button" class="nav__menu">
+      <img src="public/images/icon-menu.svg" alt="" aria-hidden="true">
+    </button>
+  </header>
+
+
+  <main>
+    <div class="container">
+      <section class="hero">
+        <picture>
+          <source media="(min-width: 769px)" srcset="public/images/image-hero-desktop.png">
+          <img src="public/images/image-hero-mobile.png" alt="hero" class="hero__img">
+        </picture>
+      </section>
+      
+      <section class="info">
+        <h1 class="info__title">Make remote work</h1>
+
+        <p class="info__body">
+          Get your team in sync, no matter your location. Streamline processes, create team rituals, and watch productivity soar.
+        </p>
+
+        <a class="info__btn" href="#">Learn more</a>
+
+        <div class="info__clients">
+          <img src="public/images/client-databiz.svg" alt="databiz">
+          <img src="public/images/client-audiophile.svg" alt="audiophile">
+          <img src="public/images/client-meet.svg" alt="meet">
+          <img src="public/images/client-maker.svg" alt="maker">
+        </div>
+      </section>
+    </div>
+  </main>
+  <!-- Features
+  
+  
+  
 
   Login
-  Register
+  Register -->
 
-  Make remote work
-
-  Get your team in sync, no matter your location. Streamline processes, 
-  create team rituals, and watch productivity soar.
-
-  Learn more
-  
-  <div class="attribution">
+  <!-- <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
-  </div>
+  </div> -->}
+  
+  <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="src/js/main.js"></script>
 </body>
 </html>
