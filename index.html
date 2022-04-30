@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  <meta name="description" content="Intro section with dropdown navigation">
 
   <title>Intro section with dropdown navigation</title>
   
@@ -20,7 +21,7 @@
     <img src="public/images/logo.svg" alt="snap" class="logo">
 
     <span class="nav--nowrapp"></span>
-    <nav class="nav nav--hidden">
+    <nav class="nav">
       <button type="button" class="nav__close">
         <img src="public/images/icon-close-menu.svg" alt="" aria-hidden="true">
       </button>
@@ -64,7 +65,7 @@
             <button class="nav__title-btn" aria-label="drop list"></button>
           </p>
 
-          <ul class="nav__sublist nav__sublist--hidden">
+          <ul class="nav__sublist nav__sublist--right nav__sublist--hidden">
             <li>
               <a href="#" class="nav__link">History</a>
             </li>
@@ -78,24 +79,21 @@
         </li>
 
         <li class="nav__item">
-          <!-- <p class="nav__title">Careers</p> -->
-          
           <a href="#" class="nav__title">Careers</a>
         </li>
 
         <li class="nav__item">
-          <!-- <p class="nav__title">About</p> -->
           <a href="#" class="nav__title">About</a>
         </li>
       </ul>
 
       <ul class="nav__list">
         <li class="nav__item">
-          <a href="#" class="nav__link"></a>
+          <a href="#" class="nav__link nav__link--btn">Login</a>
         </li>
 
         <li class="nav__item">
-          <a href="#" class="nav__link"></a>
+          <a href="#" class="nav__link nav__link--btn nav__link--btn-outline">Register</a>
         </li>
       </ul>
     </nav>
@@ -116,7 +114,7 @@
       </section>
       
       <section class="info">
-        <h1 class="info__title">Make remote work</h1>
+        <h1 class="info__title">Make<br> remote work</h1>
 
         <p class="info__body">
           Get your team in sync, no matter your location. Streamline processes, create team rituals, and watch productivity soar.
@@ -144,7 +142,7 @@
   <!-- <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
-  </div> -->}
+  </div> -->
   
   <script src="/node_modules/jquery/dist/jquery.min.js"></script>
   <script src="src/js/main.js"></script>

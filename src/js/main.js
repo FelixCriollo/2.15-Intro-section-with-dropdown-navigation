@@ -4,16 +4,23 @@ function showMenu() {{
   console.log("Algo ocurrio con el menu");
 }}
 
-$(".nav__menu").click(function () {
-  showMenu();
-});
+$(".nav__menu").click(() => showMenu());
+$(".nav__close").click(() => showMenu());
 
-$(".nav__close").click(function () {
-  showMenu();
-});
-
-$(".nav__title-btn").click(function () {
-  const subList = this.parentNode.nextSibling.nextSibling
-  $(this).toggleClass("nav__title-btn--active");
+$(".nav__title").click(function () {
+  const subList = this.nextSibling.nextSibling;
+  const btn = this.children[0];
+  $(btn).toggleClass("nav__title-btn--active");
   $(subList).toggleClass("nav__sublist--hidden");
+});
+
+$(window).resize(function() {
+  if ($(window).width() >= 1024) {
+    $(".nav__sublist").addClass("nav__sublist--hidden");
+    $(".nav--nowrapp").removeClass("nav--wrapp");
+    $(".nav").removeClass("nav--hidden");
+  } else {
+    $(".nav--nowrapp").removeClass("nav--wrapp");
+    $(".nav").addClass("nav--hidden");
+  }
 });

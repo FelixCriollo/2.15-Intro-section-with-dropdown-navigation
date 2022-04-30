@@ -23,6 +23,10 @@ ul {
   list-style: none;
 }
 
+br {
+  display: none;
+}
+
 img {
   max-width: 100%;
 }
@@ -37,7 +41,7 @@ a {
   text-decoration: none;
 }
 .container {
-  width: min(93.33%, 1360px);
+  width: 93.33%;
   margin: auto;
 }
 
@@ -47,7 +51,7 @@ a {
   justify-content: space-between;
   width: min(93.33%, 1360px);
   padding: 1.5em 0 2em 0.4em;
-  margin: auto;
+  margin-inline: auto;
 }
 .header .container {
   display: flex;
@@ -64,6 +68,8 @@ a {
   height: 100vh;
   background: #fff;
   padding: 1.25em 0.75em 1.25em 1.5em;
+  overflow: scroll;
+  transition: all 0.3s ease-in-out;
   z-index: 10;
 }
 .nav--hidden {
@@ -80,13 +86,20 @@ a {
   height: 100vh;
   background: #000;
   opacity: 0.5;
+  transition: all 0.3s ease-in-out;
   z-index: 9;
 }
 .nav__list {
   margin-top: 1.9em;
 }
+.nav__list:last-child {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+}
 .nav__sublist {
   padding: 2em 1.5em 0.25em 1.5em;
+  transition: all 0.1s ease-out;
 }
 .nav__sublist li:not(:last-child) {
   margin-bottom: 1.55em;
@@ -102,10 +115,10 @@ a {
 .nav__close {
   margin-left: auto;
 }
-.nav__title, .nav__link {
-  width: 80%;
+.nav__title, .nav__link, .nav__link--btn {
   color: var(--c-middle);
   font-weight: 500;
+  cursor: pointer;
 }
 .nav__title-btn {
   width: 1em;
@@ -124,6 +137,13 @@ a {
 .nav__link img {
   width: 1.1em;
   height: 1.1em;
+}
+.nav__link--btn {
+  padding: 0.75em 1em;
+}
+.nav__link--btn-outline {
+  border: 1px solid var(--c-middle);
+  border-radius: 1em;
 }
 
 
@@ -171,4 +191,167 @@ a {
 }
 .info__clients img {
   width: 100%;
+}
+
+/* TABLET */
+@media (min-width: 768px){
+  .container {
+    width: 60%;
+    margin: auto;
+  }
+  .hero__img {
+    transform: scale(1);
+  }
+}
+
+/* LAPTOP */
+@media (min-width: 1024px){
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+  }
+  br {
+    display: block;
+  }
+  .container {
+    width: 81.5%;
+    margin: auto;
+    padding-block: 1.8em;
+    padding-left: 2em;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .header {
+    width: min(97%, 1370px);
+    padding: 1.5em 0 2.5em 0.4em;
+    align-items: center;
+    gap: 1.98em;
+  }
+  .logo {
+    height: 100%;
+  }
+  .nav__menu, 
+  .nav__close {
+    display: none;
+  }
+  .nav {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    background: #fff;
+    padding: 0;
+    overflow: unset;
+    z-index: 10;
+  }
+  .nav__item {
+    position: relative;
+    margin: 0;
+  }
+  .nav__list {
+    display: flex;
+    align-items: center;
+    gap: 2.3em;
+    margin: 0;
+  }
+  .nav__list:last-child {
+    margin-left: auto;
+    display: flex;
+    justify-content: space-between;
+  }
+  .nav__sublist {
+    position: absolute;
+    right: 0;
+    top: 2.5em;
+    padding: 1.5em 2em 1.5em 1.5em;
+    background: #fff;
+    border-radius: 1em;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.25);
+  }
+  .nav__sublist:not(:last-child) {
+    margin-bottom: 1em;
+  }
+  .nav__sublist--right {
+    right: unset;
+    left: 0;
+  }
+  .nav__sublist--hidden {
+    height: 0;
+    padding: 0;
+    overflow-y: hidden;
+  }
+  .nav__title {
+    width: auto;
+    font-size: 0.88em;
+    display: flex;
+    align-items: center;
+    margin: 0;
+  }
+  .nav__title-btn {
+    margin-left: 0.4em;
+  }
+  .nav__link {
+    font-size: 0.94em;
+    width: 100px;
+  }
+  .nav__link--btn{
+    width: auto;
+  }
+  .nav__link--btn:hover,
+  .nav__link--btn:focus {
+    color: var(--c-dark);
+  }
+  .nav__link--btn-outline {
+    padding-inline: 1.5em;
+    border-width: 2px;
+  }
+  .nav__link--btn-outline:hover,
+  .nav__link--btn-outline:focus {
+    border-color: var(--c-dark);
+  }
+
+  .hero {
+    width: 42%;
+    margin-bottom: 0;
+  }
+  .hero__img {
+    transform: scale(1);
+  }
+  
+  .info {
+    align-self: flex-end;
+    width: 45%;
+    text-align: left;
+    margin-bottom: 0;
+  }
+  .info__title {
+    font-size: clamp(3rem, -1.6277rem + 7.2308vw, 4.88rem);
+    margin-bottom: 0.7em;
+  }
+  .info__clients {
+    margin-top: 7em;
+  }
+  .info__body {
+    width: 90%;
+    font-size: 1.13em;
+    margin-inline: 0;
+    margin-bottom: 4.19em;
+  }
+  .info__btn {
+    font-size: 1.1em;
+    padding: 1em 1.8em;
+  }
+  .info__btn:hover,
+  .info__btn:focus {
+    color: var(--c-dark);
+    background: var(--c-light);
+    outline: 2px solid var(--c-dark);
+  }
 }
